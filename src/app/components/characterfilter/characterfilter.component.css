@@ -1,0 +1,106 @@
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-title {
+  color: #ffd700;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.select-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.house-select {
+  width: 280px;
+}
+
+.house-header {
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.house-header h2 {
+  color: #fff;
+  margin: 0;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  padding: 60px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.char-card {
+  background: #1a1a2e !important;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+
+.char-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(255, 215, 0, 0.2) !important;
+}
+
+.char-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.no-image {
+  width: 100%;
+  height: 240px;
+  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+}
+
+.char-name {
+  color: #fff;
+  margin: 10px 0 4px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.actor {
+  color: #aaa;
+  font-size: 0.82rem;
+  text-align: center;
+  margin: 2px 0;
+}
+
+.house-badge {
+  display: block;
+  text-align: center;
+  padding: 3px 10px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin: 6px 0 8px;
+}
+
+.error-msg, .no-results {
+  color: #ff6b6b;
+  text-align: center;
+  font-size: 1.1rem;
+}

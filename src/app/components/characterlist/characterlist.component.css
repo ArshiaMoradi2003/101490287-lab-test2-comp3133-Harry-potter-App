@@ -1,0 +1,107 @@
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-title {
+  color: #ffd700;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.search-field {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto 24px;
+}
+
+.search-field input {
+  color: white;
+}
+
+::ng-deep .search-field .mat-mdc-form-field-flex {
+  background: #1a1a2e;
+}
+
+::ng-deep .search-field label {
+  color: #aaa !important;
+}
+
+.count-label {
+  color: #aaa;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  padding: 60px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.char-card {
+  background: #1a1a2e !important;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+
+.char-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(255, 215, 0, 0.2) !important;
+}
+
+.char-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.no-image {
+  width: 100%;
+  height: 240px;
+  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.char-name {
+  color: #fff;
+  margin: 10px 0 6px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.house-badge {
+  display: block;
+  text-align: center;
+  padding: 3px 10px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.no-house {
+  background: #555;
+}
+
+.error-msg {
+  color: #ff6b6b;
+  text-align: center;
+  font-size: 1.1rem;
+}

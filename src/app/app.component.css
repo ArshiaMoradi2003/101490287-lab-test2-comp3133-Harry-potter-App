@@ -1,0 +1,29 @@
+.navbar {
+  background: #1a0a2e !important;
+  color: #ffd700 !important;
+}
+
+.nav-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.active-link {
+  background: rgba(255, 215, 0, 0.2) !important;
+  border-radius: 4px;
+}
+
+.main-content {
+  padding: 20px;
+  background: #0d0d0d;
+  min-height: calc(100vh - 64px);
+}
+
+a[mat-button] {
+  color: #ffd700 !important;
+}

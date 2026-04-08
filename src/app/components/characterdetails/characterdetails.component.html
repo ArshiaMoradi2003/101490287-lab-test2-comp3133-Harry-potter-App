@@ -1,0 +1,88 @@
+<div class="page-container">
+  <a mat-button routerLink="/characters" class="back-btn">← Back to Characters</a>
+
+  @if (loading()) {
+    <div class="spinner-container">
+      <mat-spinner></mat-spinner>
+    </div>
+  }
+
+  @if (error()) {
+    <p class="error-msg">{{ error() }}</p>
+  }
+
+  @if (character(); as c) {
+    <mat-card class="detail-card">
+      <div class="detail-layout">
+        <div class="image-section">
+          @if (c.image) {
+            <img [src]="c.image" [alt]="c.name" class="detail-image" />
+          } @else {
+            <div class="no-image">No Image Available</div>
+          }
+        </div>
+
+        <div class="info-section">
+          <h1 class="char-name" [style.color]="getHouseColor(c.house)">{{ c.name }}</h1>
+
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="label">House:</span>
+              <span class="value" [style.color]="getHouseColor(c.house)">
+                {{ c.house || 'Unknown' }}
+              </span>
+            </div>
+
+            <div class="info-item">
+              <span class="label">Actor:</span>
+              <span class="value accent">{{ c.actor || 'Unknown' }}</span>
+            </div>
+
+            <div class="info-item">
+              <span class="label">Wizard:</span>
+              <span class="value accent">{{ c.wizard ? 'Yes' : 'No' }}</span>
+            </div>
+
+            <div class="info-item">
+              <span class="label">Species:</span>
+              <span class="value accent">{{ c.species || 'Unknown' }}</span>
+            </div>
+
+            <div class="info-item">
+              <span class="label">Ancestry:</span>
+              <span class="value accent">{{ c.ancestry || 'Unknown' }}</span>
+            </div>
+
+            <div class="info-item">
+              <span class="label">Patronus:</span>
+              <span class="value accent">{{ c.patronus || 'None' }}</span>
+            </div>
+
+            <div class="info-item">
+              <span class="label">Alive:</span>
+              <span class="value" [class.alive]="c.alive" [class.dead]="!c.alive">
+                {{ c.alive ? 'Alive' : 'Deceased' }}
+              </span>
+            </div>
+          </div>
+
+          <div class="wand-section">
+            <h3 class="wand-title">🪄 Wand</h3>
+            <div class="info-item">
+              <span class="label">Wood:</span>
+              <span class="value accent">{{ c.wand.wood || 'Unknown' }}</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Core:</span>
+              <span class="value accent">{{ c.wand.core || 'Unknown' }}</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Length:</span>
+              <span class="value accent">{{ c.wand.length ? c.wand.length + '"' : 'Unknown' }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  }
+</div>

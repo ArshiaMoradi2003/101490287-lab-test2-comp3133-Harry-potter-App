@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div class="page-container">
+  <h1 class="page-title">🏰 Filter by House</h1>
+
+  <div class="select-container">
+    <mat-form-field appearance="fill" class="house-select">
+      <mat-label>Select a House</mat-label>
+      <mat-select [formControl]="houseControl" (selectionChange)="onHouseChange($event)">
+        @for (house of houses; track house) {
+          <mat-option [value]="house">{{ house }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  @if (loading()) {
+    <div class="spinner-container">
+      <mat-spinner></mat-spinner>
+    </div>
+  }
+
+  @if (error()) {
+    <p class="error-msg">{{ error() }}</p>
+  }
+
+  @if (!loading() && characters().length > 0) {
+    <div class="house-header" [style.background-color]="getHouseColor(selectedHouse())">
+      <h2>{{ selectedHouse() }} — {{ characters().length }} characters</h2>
+    </div>
+    <div class="grid">
+      @for (character of characters(); track character.id) {
+        <mat-card class="char-card" [routerLink]="['/character', character.id]">
+          @if (character.image) {
+            <img [src]="character.image" [alt]="character.name" class="char-image" />
+          } @else {
+            <div class="no-image">No Image</div>
+          }
+          <mat-card-content>
+            <h3 class="char-name">{{ character.name }}</h3>
+            @if (character.actor) {
+              <p class="actor">Actor: {{ character.actor }}</p>
+            }
+            <span class="house-badge" [style.background-color]="getHouseColor(character.house)">
+              {{ character.house }}
+            </span>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  }
+
+  @if (!loading() && selectedHouse() && characters().length === 0) {
+    <p class="no-results">No characters found for {{ selectedHouse() }}.</p>
+  }
+</div>
+</body>
+</html>

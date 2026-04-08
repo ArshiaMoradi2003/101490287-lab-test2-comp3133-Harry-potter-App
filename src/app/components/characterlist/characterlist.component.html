@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div class="page-container">
+  <h1 class="page-title">⚡ Harry Potter Characters</h1>
+
+  <mat-form-field appearance="outline" class="search-field">
+    <mat-label>Search Characters...</mat-label>
+    <input matInput [value]="searchTerm()" (input)="onSearch($any($event.target).value)" />
+  </mat-form-field>
+
+  @if (loading()) {
+    <div class="loading-container">
+      <mat-spinner></mat-spinner>
+    </div>
+  }
+
+  @if (error()) {
+    <p class="error-msg">{{ error() }}</p>
+  }
+
+  @if (!loading() && !error()) {
+    <p class="count-label">Showing {{ filteredCharacters().length }} characters</p>
+    <div class="grid">
+      @for (character of filteredCharacters(); track character.id) {
+        <mat-card class="char-card" [routerLink]="['/character', character.id]">
+          @if (character.image) {
+            <img [src]="character.image" [alt]="character.name" class="char-image" />
+          } @else {
+            <div class="no-image">No Image</div>
+          }
+          <mat-card-content>
+            <h3 class="char-name">{{ character.name }}</h3>
+            @if (character.house) {
+              <span class="house-badge" [style.background-color]="getHouseColor(character.house)">
+                {{ character.house }}
+              </span>
+            } @else {
+              <span class="house-badge no-house">No House</span>
+            }
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  }
+</div>

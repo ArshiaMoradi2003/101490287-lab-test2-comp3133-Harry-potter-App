@@ -1,0 +1,119 @@
+.page-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.back-btn {
+  color: #ffd700 !important;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  padding: 60px;
+}
+
+.detail-card {
+  background: #1a1a2e !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+.detail-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 0;
+}
+
+.image-section {
+  background: #111;
+}
+
+.detail-image {
+  width: 100%;
+  height: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.no-image {
+  width: 100%;
+  height: 400px;
+  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+}
+
+.info-section {
+  padding: 32px;
+  background: #12122a;
+}
+
+.char-name {
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.info-item {
+  display: flex;
+  gap: 8px;
+  font-size: 1rem;
+}
+
+.label {
+  color: #ccc;
+  min-width: 90px;
+  font-weight: 500;
+}
+
+.value {
+  color: #fff;
+}
+
+.value.accent {
+  color: #7ec8e3;
+}
+
+.value.alive {
+  color: #4caf50;
+}
+
+.value.dead {
+  color: #f44336;
+}
+
+.wand-section {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+}
+
+.wand-title {
+  color: #ffd700;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.error-msg {
+  color: #ff6b6b;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 700px) {
+  .detail-layout {
+    grid-template-columns: 1fr;
+  }
+}
